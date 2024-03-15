@@ -30,7 +30,7 @@ class SecretMenuItemsController < ApplicationController
 
   def destroy
     @secretMenuItems = SecretMenuItem.all
-    @secretMenuItem = SecretMenuItem.find(params:[id])
+    @secretMenuItem = SecretMenuItem.find(params[:id])
     @secretMenuItem.destroy
     render json: @secretMenuItems
   end
