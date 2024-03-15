@@ -19,13 +19,14 @@ class SecretMenuItemsController < ApplicationController
   end
 
   def update
+    @secretMenuItems = SecretMenuItem.all
     @secretMenuItem = SecretMenuItem.find(params[:id])
     @secretMenuItem.update(
       menu_name: params[:menu_name],
       restaurant_name: params[:restaurant_name],
       menu_description: params[:menu_description]
     )
-    render json: @secretMenuItem
+    render json: @secretMenuItems
   end
 
   def destroy
